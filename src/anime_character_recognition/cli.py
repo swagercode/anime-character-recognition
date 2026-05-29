@@ -4,8 +4,7 @@ from __future__ import annotations
 
 import argparse
 
-from guh_logs_auto_processing import __version__
-from guh_logs_auto_processing import classifier
+from anime_character_recognition import __version__
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
