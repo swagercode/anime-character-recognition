@@ -29,7 +29,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     if args.command == "classify":
-        print(classification)
+        print("Classification not yet implemented.")
     return 0
 
 
