@@ -9,8 +9,8 @@ from guh_logs_auto_processing import classifier
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="guh-logs",
-        description="Process GUH log files.",
+        prog="anime_character_recognition",
+        description="Recognizes anime characters.",
     )
     parser.add_argument(
         "--version",
