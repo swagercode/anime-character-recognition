@@ -1,1 +1,4 @@
 q;a
+What is random baseline accuracy for N equally likely classes?;1 / N.
+Why start image classification with fewer classes?;It makes debugging easier because random baseline accuracy is higher and mistakes are easier to inspect.
+What does a folder-per-class image dataset usually mean?;Each subfolder name is treated as the class label for the images inside it.
