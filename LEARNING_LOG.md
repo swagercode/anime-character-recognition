@@ -22,9 +22,3 @@
 - A subcommand is a command inside a CLI, such as `classify`.
 - A `NameError` happens when Python cannot find a requested name.
 - A scope is a region where Python can look up names.
-- For this project, the first computer vision target is image classification: input image to one character label.
-- A dataset is a collection of examples used for training and evaluation.
-- A label is the correct answer attached to a supervised-learning example.
-- A validation set is held back to estimate performance on unseen data.
-- Transfer learning means adapting a pretrained model to a new task.
-- Repeated backgrounds can hurt image classification because the model may learn the background instead of the character.
