@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import argparse
 
-from anime_character_recognition import __version__
+from anime_character_recognition import __version__, data
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -19,8 +20,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     subparsers = parser.add_subparsers(dest="command")
 
-    classify_parser = subparsers.add_parser("classify")
-    classify_parser.add_argument("--image", required=True)
+    data_parser = subparsers.add_parser("data")
+    data_parser.add_argument("--manifest", required=True)
 
     return parser
 
@@ -28,8 +29,10 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
-    if args.command == "classify":
-        print("Classification not yet implemented.")
+    if args.command == "data":
+        path = args.manifest
+        output = data.load_manifest(path)
+        print(output)
     return 0
 
 

@@ -8,7 +8,10 @@ version = "0.1.0"
 description = "A learning project for anime character image classification."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "torch>=2.12.0",
+    "torchvision>=0.27.0",
+]
 
 [project.optional-dependencies]
 dev = [

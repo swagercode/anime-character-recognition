@@ -1,0 +1,7 @@
+from anime_character_recognition.data import load_manifest
+
+manifest = load_manifest("dataset_manifest.csv")
+
+assert len(manifest[0]) == 450
+assert len(manifest[1]) == 6
+assert manifest[1].values == list(range(6))
