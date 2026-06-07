@@ -20,3 +20,16 @@ def test_load_manifest() -> None:
     for record in records:
         assert record.label_idx == class_to_idx[record.label]
         assert record.image_path.exists()
+
+
+def test_load_manifest_with_split() -> None:
+    split_count = {"val": 60, "train": 360, "test": 30}
+    for split, count in split_count.items():
+        manifest = load_manifest("dataset_manifest.csv", split)
+
+        records = manifest[0]
+
+        assert len(records) == count
+
+        for record in records:
+            assert record.split == split

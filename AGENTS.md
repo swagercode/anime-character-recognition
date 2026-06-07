@@ -53,7 +53,9 @@ Anki card policy:
 * Prefer cards for reusable facts, terminology, return types, shape conventions, runtime behavior, memory behavior, and common pitfalls.
 * Keep cards concise and transferable to future projects.
 * Include cards when I learn a concept that I will need repeatedly while coding/debugging.
-* When adding Anki cards, edit `anki.csv` directly using the existing `q;a` semicolon format instead of writing the cards in chat.
+* When adding Anki cards, create them directly through the Anki MCP tools instead of writing cards in chat or editing a CSV file.
+* Use Anki deck `code` and model `Basic` for project cards unless I explicitly say otherwise.
+* For math notation in Anki cards, use MathJax.
 
 Good Anki card examples:
 
@@ -75,6 +77,17 @@ Good Anki card examples:
   a: Starting from a pretrained model and adapting it to a new task.
 * q: What is the difference between a tensor view and a copy?
   a: A view shares underlying storage with the original tensor/array, while a copy owns separate storage.
+
+Good direct Anki card examples:
+
+* q: What method does Python call when you use `len(obj)`?
+  a: Python calls `obj.__len__()`.
+* q: What method does Python call when you use `obj[index]`?
+  a: Python calls `obj.__getitem__(index)`.
+* q: What shape does `transforms.ToTensor()` produce for one RGB image?
+  a: `[channels, height, width]`, e.g. `[3, 96, 96]`.
+* q: Why convert loaded images to RGB in an image dataset?
+  a: It ensures every image has a consistent 3-channel color mode.
 
 Project coaching rules:
 

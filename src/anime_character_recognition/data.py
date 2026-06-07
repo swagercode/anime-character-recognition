@@ -14,7 +14,9 @@ class ManifestRecord:
 ClassToIdx = dict[str, int]
 
 
-def load_manifest(path: str) -> tuple[list[ManifestRecord], ClassToIdx]:
+def load_manifest(
+    path: str, split: str | None = None
+) -> tuple[list[ManifestRecord], ClassToIdx]:
     records = []
     class_to_idx = {}
     labels = set()
@@ -26,6 +28,8 @@ def load_manifest(path: str) -> tuple[list[ManifestRecord], ClassToIdx]:
                 class_to_idx[row["label"]] = index
                 labels.add(row["label"])
                 index += 1
+            if split and not split == row["split"]:
+                continue
             records.append(
                 ManifestRecord(
                     Path(row["image_path"]),
